@@ -1,44 +1,6 @@
 "use client"
 
-import { Mail, Phone, ArrowRight } from "lucide-react"
-
-const contactInfo = [
-  { icon: PersonIcon, label: "Kontaktperson", value: "Joacim Lind" },
-  { icon: BadgeIcon, label: "Roll", value: "Ansvarig Fastighet" },
-  { icon: Phone, label: "Telefon", value: "+46 70 740 1383" },
-  { icon: Mail, label: "E-post", value: "info@projektgarantiab.se" },
-  { icon: MapPinIcon, label: "Adress", value: "Ekerövägen 51, 178 37 Ekerö" },
-]
-
-function MapPinIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}
-      strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  )
-}
-
-function PersonIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}
-      strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-    </svg>
-  )
-}
-
-function BadgeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}
-      strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect x="2" y="7" width="20" height="14" rx="2" />
-      <path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2Z" />
-    </svg>
-  )
-}
+import { Mail, Phone, ArrowRight, MapPin } from "lucide-react"
 
 const inputStyle = {
   background: "rgba(255,255,255,0.03)",
@@ -77,22 +39,61 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          {/* Left — contact info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 content-start">
-            {contactInfo.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.label} className="rounded-xl p-4 border"
-                  style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Icon className="w-3 h-3" style={{ color: "rgba(240,237,232,0.2)" }} />
-                    <span className="text-[9px] tracking-[0.25em] uppercase"
-                      style={{ color: "rgba(240,237,232,0.25)" }}>{item.label}</span>
-                  </div>
-                  <div className="text-sm font-medium leading-snug" style={{ color: "#F0EDE8" }}>{item.value}</div>
+          {/* Left — contact card */}
+          <div className="rounded-2xl border overflow-hidden"
+            style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}>
+
+            {/* Profile header */}
+            <div className="px-7 pt-8 pb-7 border-b" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+              <div className="flex items-center gap-4 mb-5">
+                {/* Avatar */}
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center border shrink-0"
+                  style={{ background: "rgba(196,160,106,0.1)", borderColor: "rgba(196,160,106,0.25)" }}>
+                  <span className="text-sm font-black" style={{ color: "#C4A06A" }}>JL</span>
                 </div>
-              )
-            })}
+                <div>
+                  <div className="text-base font-semibold tracking-tight" style={{ color: "#F0EDE8" }}>
+                    Joacim Lind
+                  </div>
+                  <div className="text-[11px] mt-0.5 tracking-wide" style={{ color: "rgba(240,237,232,0.3)" }}>
+                    Ansvarig Fastighet
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.35)" }}>
+                Din direktkontakt för projektfrågor och offertförfrågningar. Hör av dig — vi svarar vanligtvis inom en arbetsdag.
+              </p>
+            </div>
+
+            {/* Contact rows */}
+            <div className="px-7 py-6 space-y-5">
+              {[
+                { Icon: Phone, label: "Telefon", value: "+46 70 740 13 83", href: "tel:+46707401383" },
+                { Icon: Mail,  label: "E-post",  value: "info@projektgarantiab.se", href: "mailto:info@projektgarantiab.se" },
+                { Icon: MapPin, label: "Adress", value: "Ekerövägen 51, 178 37 Ekerö", href: undefined },
+              ].map(({ Icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 border"
+                    style={{ background: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.06)" }}>
+                    <Icon size={13} style={{ color: "rgba(240,237,232,0.3)" }} />
+                  </div>
+                  <div>
+                    <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
+                      style={{ color: "rgba(240,237,232,0.2)" }}>{label}</div>
+                    {href ? (
+                      <a href={href} className="text-sm font-medium transition-colors duration-200"
+                        style={{ color: "#F0EDE8" }}
+                        onMouseEnter={e => (e.currentTarget.style.color = "#C4A06A")}
+                        onMouseLeave={e => (e.currentTarget.style.color = "#F0EDE8")}>
+                        {value}
+                      </a>
+                    ) : (
+                      <div className="text-sm font-medium" style={{ color: "#F0EDE8" }}>{value}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right — form */}
@@ -160,28 +161,31 @@ export function ContactSection() {
 
         </div>
 
-        {/* Google Maps */}
-        <div className="mt-8 rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-          <iframe
-            src="https://www.google.com/maps?q=Ekerövägen+51,+178+37+Ekerö,+Sweden&output=embed&hl=sv"
-            width="100%"
-            height="340"
-            style={{
-              border: 0,
-              display: "block",
-              filter: "grayscale(1) invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9)",
-            }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Projektgaranti AB — Ekerövägen 51, Ekerö"
-          />
-        </div>
+      </div>
 
+      {/* Full-bleed map */}
+      <div className="relative mt-24 border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+        <iframe
+          src="https://www.google.com/maps?q=Ekerövägen+51,+178+37+Ekerö,+Sweden&output=embed&hl=sv"
+          width="100%"
+          height="420"
+          style={{
+            border: 0,
+            display: "block",
+            filter: "grayscale(1) invert(1) hue-rotate(180deg) brightness(0.8) contrast(0.85)",
+          }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Projektgaranti AB — Ekerövägen 51, Ekerö"
+        />
+        {/* Fade top edge into section */}
+        <div className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, #0B0B0A, transparent)" }} />
       </div>
 
       {/* Footer */}
-      <div className="relative max-w-6xl mx-auto mt-28 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4"
+      <div className="relative max-w-6xl mx-auto mt-10 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4"
         style={{ borderColor: "rgba(255,255,255,0.05)" }}>
         <div className="flex items-center gap-2.5">
           <div className="w-6 h-6 rounded-lg flex items-center justify-center border"
