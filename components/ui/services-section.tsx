@@ -60,14 +60,14 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="tjänster" className="relative py-36 px-6" style={{ background: "#0F0F0E" }}>
+    <section id="tjänster" className="relative py-24 md:py-36 px-6" style={{ background: "#0F0F0E" }}>
       <div className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent)" }} />
 
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: "#C4A06A" }}>
             Vad vi gör
           </p>
@@ -91,7 +91,7 @@ export function ServicesSection() {
             return (
               <div
                 key={s.title}
-                className="p-8 flex flex-col"
+                className="p-6 md:p-8 flex flex-col"
                 style={{ background: "#0F0F0E" }}
               >
                 <div className="flex items-center justify-between mb-8">

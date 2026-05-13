@@ -49,7 +49,7 @@ export function Hero() {
       style={{ background: "#0B0B0A" }}
     >
       {/* Content — visible in first viewport */}
-      <div className="mt-36 relative flex w-full max-w-5xl flex-col items-center justify-center gap-6 text-center">
+      <div className="mt-24 md:mt-36 relative flex w-full max-w-5xl flex-col items-center justify-center gap-6 text-center">
 
         <span className="text-[10px] tracking-[0.4em] uppercase relative z-10"
           style={{ color: "#C4A06A", opacity: 0.7 }}>

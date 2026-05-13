@@ -11,7 +11,7 @@ const inputStyle = {
 export function ContactSection() {
 
   return (
-    <section id="kontakt" className="relative py-36 px-6" style={{ background: "#0B0B0A" }}>
+    <section id="kontakt" className="relative py-24 md:py-36 px-6" style={{ background: "#0B0B0A" }}>
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 50% 50% at 30% 60%, rgba(74,114,200,0.04) 0%, transparent 70%)" }} />
 
@@ -21,7 +21,7 @@ export function ContactSection() {
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: "#C4A06A" }}>
             Kontakt
           </p>
@@ -102,7 +102,7 @@ export function ContactSection() {
             style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}
             onSubmit={(e) => e.preventDefault()}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { label: "Förnamn", placeholder: "Anna" },
                 { label: "Efternamn", placeholder: "Lindgren" },
@@ -164,21 +164,23 @@ export function ContactSection() {
       </div>
 
       {/* Full-bleed map */}
-      <div className="relative mt-24 border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-        <iframe
-          src="https://www.google.com/maps?q=Ekerövägen+51,+178+37+Ekerö,+Sweden&output=embed&hl=sv"
-          width="100%"
-          height="420"
-          style={{
-            border: 0,
-            display: "block",
-            filter: "grayscale(1) invert(1) hue-rotate(180deg) brightness(0.8) contrast(0.85)",
-          }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Projektgaranti AB — Ekerövägen 51, Ekerö"
-        />
+      <div className="relative mt-16 md:mt-24 border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+        <div className="h-65 md:h-105">
+          <iframe
+            src="https://www.google.com/maps?q=Ekerövägen+51,+178+37+Ekerö,+Sweden&output=embed&hl=sv"
+            width="100%"
+            height="100%"
+            style={{
+              border: 0,
+              display: "block",
+              filter: "grayscale(1) invert(1) hue-rotate(180deg) brightness(0.8) contrast(0.85)",
+            }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Projektgaranti AB — Ekerövägen 51, Ekerö"
+          />
+        </div>
         {/* Fade top edge into section */}
         <div className="absolute top-0 left-0 right-0 h-16 pointer-events-none"
           style={{ background: "linear-gradient(to bottom, #0B0B0A, transparent)" }} />

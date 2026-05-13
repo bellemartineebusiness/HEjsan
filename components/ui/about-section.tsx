@@ -11,9 +11,9 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section id="om-oss" className="relative py-36 px-6" style={{ background: "#0F0F0E" }}>
+    <section id="om-oss" className="relative py-24 md:py-36 px-6" style={{ background: "#0F0F0E" }}>
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-28 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-28 items-center">
 
           {/* Left */}
           <div>
@@ -33,14 +33,14 @@ export function AboutSection() {
               Projektgaranti AB grundades 1998 med ett tydligt uppdrag — att ge beställare och
               fastighetsägare fullständig kontroll och trygghet i byggprocessen.
             </p>
-            <p className="text-sm leading-relaxed mb-10"
+            <p className="text-sm leading-relaxed mb-7 md:mb-10"
               style={{ color: "rgba(240,237,232,0.3)" }}>
               Vi arbetar alltid oberoende från entreprenörer och leverantörer, vilket ger oss
               möjlighet att uteslutande representera beställarens intressen — oavsett projektets
               storlek eller komplexitet.
             </p>
 
-            <ul className="space-y-3.5 mb-10">
+            <ul className="space-y-3.5 mb-7 md:mb-10">
               {values.map((v) => (
                 <li key={v} className="flex items-start gap-3 text-sm leading-relaxed"
                   style={{ color: "rgba(240,237,232,0.45)" }}>
@@ -50,13 +50,13 @@ export function AboutSection() {
               ))}
             </ul>
 
-            <div className="flex items-center gap-2 text-[11px] tracking-wider mb-10"
+            <div className="flex items-center gap-2 text-[11px] tracking-wider mb-7 md:mb-10"
               style={{ color: "rgba(240,237,232,0.2)" }}>
               <MapPin size={11} />
               Ekerövägen 51, 178 37 Ekerö
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <a href="#kontakt"
                 className="flex items-center gap-2 h-11 px-6 rounded-xl text-sm font-semibold border transition-colors duration-200"
                 style={{ background: "rgba(196,160,106,0.1)", borderColor: "rgba(196,160,106,0.25)", color: "#C4A06A" }}
@@ -103,7 +103,7 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge — top right */}
-            <div className="absolute -top-4 -right-4 rounded-xl px-4 py-3 border"
+            <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
               style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
               <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
                 style={{ color: "rgba(240,237,232,0.25)" }}>Certifierad</div>
@@ -111,7 +111,7 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge — bottom left */}
-            <div className="absolute -bottom-4 -left-4 rounded-xl px-4 py-3 border"
+            <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
               style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
               <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
                 style={{ color: "rgba(240,237,232,0.25)" }}>Genomförda uppdrag</div>

@@ -50,7 +50,16 @@ export function StatsSection() {
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className="flex flex-col items-center text-center py-12 px-6 border-r last:border-r-0"
+              className={[
+                "flex flex-col items-center text-center py-10 px-3 md:px-6",
+                // mobile 2-col: right border on left column only
+                i % 2 === 0 ? "border-r" : "",
+                // mobile 2-col: bottom border on first row only
+                i < 2 ? "border-b" : "",
+                // desktop 4-col: restore right borders except last, remove bottom
+                i < stats.length - 1 ? "lg:border-r" : "lg:border-r-0",
+                "lg:border-b-0",
+              ].filter(Boolean).join(" ")}
               style={{ borderColor: "rgba(255,255,255,0.05)" }}
             >
               <div className="text-[clamp(2.5rem,4.5vw,4rem)] font-black tracking-[-0.04em] leading-none mb-3">
