@@ -1,0 +1,134 @@
+"use client"
+
+import { CheckCircle2, MapPin, ArrowRight } from "lucide-react"
+
+const values = [
+  "Oberoende från alla leverantörer och entreprenörer",
+  "Certifierade besiktningsmän och projektledare",
+  "Djup kännedom om Stockholms byggmarknad",
+  "Proaktiv kommunikation genom hela projektet",
+]
+
+export function AboutSection() {
+  return (
+    <section id="om-oss" className="relative py-36 px-6" style={{ background: "#0F0F0E" }}>
+      <div className="relative max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-28 items-center">
+
+          {/* Left */}
+          <div>
+            <p className="text-[10px] tracking-[0.4em] uppercase mb-6" style={{ color: "#C4A06A" }}>
+              Om oss
+            </p>
+
+            <h2 className="text-5xl md:text-6xl font-black tracking-[-0.03em] mb-7 leading-none"
+              style={{ color: "#F0EDE8" }}>
+              25 år av bevisad
+              <br />
+              <span style={{ color: "#C4A06A" }}>excellens</span>
+            </h2>
+
+            <p className="text-base leading-relaxed mb-4"
+              style={{ color: "rgba(240,237,232,0.45)" }}>
+              Projektgaranti AB grundades 1998 med ett tydligt uppdrag — att ge beställare och
+              fastighetsägare fullständig kontroll och trygghet i byggprocessen.
+            </p>
+            <p className="text-sm leading-relaxed mb-10"
+              style={{ color: "rgba(240,237,232,0.3)" }}>
+              Vi arbetar alltid oberoende från entreprenörer och leverantörer, vilket ger oss
+              möjlighet att uteslutande representera beställarens intressen — oavsett projektets
+              storlek eller komplexitet.
+            </p>
+
+            <ul className="space-y-3.5 mb-10">
+              {values.map((v) => (
+                <li key={v} className="flex items-start gap-3 text-sm leading-relaxed"
+                  style={{ color: "rgba(240,237,232,0.45)" }}>
+                  <CheckCircle2 size={14} className="shrink-0 mt-0.5" style={{ color: "#C4A06A" }} />
+                  {v}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center gap-2 text-[11px] tracking-wider mb-10"
+              style={{ color: "rgba(240,237,232,0.2)" }}>
+              <MapPin size={11} />
+              Ekerövägen 51, 178 37 Ekerö
+            </div>
+
+            <div className="flex gap-3">
+              <a href="#kontakt"
+                className="flex items-center gap-2 h-11 px-6 rounded-xl text-sm font-semibold border transition-colors duration-200"
+                style={{ background: "rgba(196,160,106,0.1)", borderColor: "rgba(196,160,106,0.25)", color: "#C4A06A" }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = "rgba(196,160,106,0.16)"
+                  e.currentTarget.style.borderColor = "rgba(196,160,106,0.4)"
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = "rgba(196,160,106,0.1)"
+                  e.currentTarget.style.borderColor = "rgba(196,160,106,0.25)"
+                }}
+              >
+                Kontakta oss <ArrowRight size={13} />
+              </a>
+              <button
+                className="h-11 px-6 rounded-xl border text-sm font-medium transition-colors duration-200"
+                style={{ borderColor: "rgba(255,255,255,0.07)", color: "rgba(240,237,232,0.35)" }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = "rgba(240,237,232,0.6)"
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)"
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = "rgba(240,237,232,0.35)"
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"
+                }}
+              >
+                Referensprojekt
+              </button>
+            </div>
+          </div>
+
+          {/* Right — image */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden border aspect-4/3"
+              style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <img
+                src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+                alt="Byggprojekt"
+                className="w-full h-full object-cover"
+                style={{ opacity: 0.5 }}
+              />
+              <div className="absolute inset-0"
+                style={{ background: "linear-gradient(180deg, transparent 30%, rgba(15,15,14,0.9) 100%)" }} />
+            </div>
+
+            {/* Floating badge — top right */}
+            <div className="absolute -top-4 -right-4 rounded-xl px-4 py-3 border"
+              style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
+              <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
+                style={{ color: "rgba(240,237,232,0.25)" }}>Certifierad</div>
+              <div className="text-sm font-semibold" style={{ color: "#F0EDE8" }}>ISO 9001:2015</div>
+            </div>
+
+            {/* Floating badge — bottom left */}
+            <div className="absolute -bottom-4 -left-4 rounded-xl px-4 py-3 border"
+              style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
+              <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
+                style={{ color: "rgba(240,237,232,0.25)" }}>Genomförda uppdrag</div>
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl font-black tabular-nums" style={{ color: "#C4A06A" }}>400+</span>
+                <span className="text-xs" style={{ color: "rgba(240,237,232,0.25)" }}>projekt</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent)" }} />
+    </section>
+  )
+}
