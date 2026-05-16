@@ -1,118 +1,143 @@
 "use client"
 
-import { motion, useScroll, useTransform, type MotionValue } from "framer-motion"
-import { useRef } from "react"
+import { useEffect, useState } from "react"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-const badges = ["ISO 9001-certifierad", "Oberoende granskning", "Stockholm sedan 1998"]
+const titles = ["garanterat", "i tid", "i budget", "certifierat", "tryggt"]
 
-function HeroPath({
-  className,
-  scrollYProgress,
-}: {
-  className: string
-  scrollYProgress: MotionValue<number>
-}) {
-  const pathLength = useTransform(scrollYProgress, [0, 0.85], [0.06, 1])
-
-  return (
-    <svg
-      width="1278"
-      height="2319"
-      viewBox="0 0 1278 2319"
-      fill="none"
-      overflow="visible"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <motion.path
-        d="M876.605 394.131C788.982 335.917 696.198 358.139 691.836 416.303C685.453 501.424 853.722 498.43 941.95 409.714C1016.1 335.156 1008.64 186.907 906.167 142.846C807.014 100.212 712.699 198.494 789.049 245.127C889.053 306.207 986.062 116.979 840.548 43.3233C743.932 -5.58141 678.027 57.1682 672.279 112.188C666.53 167.208 712.538 172.943 736.353 163.088C760.167 153.234 764.14 120.924 746.651 93.3868C717.461 47.4252 638.894 77.8642 601.018 116.979C568.164 150.908 557 201.079 576.467 246.924C593.342 286.664 630.24 310.55 671.68 302.614C756.114 286.446 729.747 206.546 681.86 186.442C630.54 164.898 492 209.318 495.026 287.644C496.837 334.494 518.402 366.466 582.455 367.287C680.013 368.538 771.538 299.456 898.634 292.434C1007.02 286.446 1192.67 309.384 1242.36 382.258C1266.99 418.39 1273.65 443.108 1247.75 474.477C1217.32 511.33 1149.4 511.259 1096.84 466.093C1044.29 420.928 1029.14 380.576 1033.97 324.172C1038.31 273.428 1069.55 228.986 1117.2 216.384C1152.2 207.128 1188.29 213.629 1194.45 245.127C1201.49 281.062 1132.22 280.104 1100.44 272.673C1065.32 264.464 1044.22 234.837 1032.77 201.413C1019.29 162.061 1029.71 131.126 1056.44 100.965C1086.19 67.4032 1143.96 54.5526 1175.78 86.1513C1207.02 117.17 1186.81 143.379 1156.22 166.691C1112.57 199.959 1052.57 186.238 999.784 155.164C957.312 130.164 899.171 63.7054 931.284 26.3214C952.068 2.12513 996.288 3.87363 1007.22 43.58C1018.15 83.2749 1003.56 122.644 975.969 163.376C948.377 204.107 907.272 255.122 913.558 321.045C919.727 385.734 990.968 497.068 1063.84 503.35C1111.46 507.456 1166.79 511.984 1175.68 464.527C1191.52 379.956 1101.26 334.985 1030.29 377.017C971.109 412.064 956.297 483.647 953.797 561.655C947.587 755.413 1197.56 941.828 936.039 1140.66C745.771 1285.32 321.926 950.737 134.536 1202.19C-6.68295 1391.68 -53.4837 1655.38 131.935 1760.5C478.381 1956.91 1124.19 1515 1201.28 1997.83C1273.66 2451.23 100.805 1864.7 303.794 2668.89"
-        stroke="#C4A06A"
-        strokeWidth="14"
-        strokeLinecap="round"
-        strokeOpacity={0.4}
-        style={{ pathLength }}
-      />
-    </svg>
-  )
-}
+const trust = [
+  "ISO 9001-certifierad",
+  "400+ genomförda projekt",
+  "Stockholm sedan 1998",
+]
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref })
+  const [idx, setIdx] = useState(0)
+
+  useEffect(() => {
+    const id = setTimeout(() => setIdx(i => (i + 1) % titles.length), 3800)
+    return () => clearTimeout(id)
+  }, [idx])
 
   return (
     <section
-      ref={ref}
-      className="relative flex h-[220vh] w-screen flex-col items-center overflow-hidden px-6"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 py-28 overflow-hidden"
       style={{ background: "#0B0B0A" }}
     >
-      {/* Content — visible in first viewport */}
-      <div className="mt-24 md:mt-36 relative flex w-full max-w-5xl flex-col items-center justify-center gap-6 text-center">
+      {/* Background image */}
+      <img
+        src="https://images.unsplash.com/photo-1641785735204-d9ba5817cbf7?w=1920&q=80"
+        alt=""
+        aria-hidden
+        fetchPriority="high"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ opacity: 0.35 }}
+      />
 
-        <span className="text-[10px] tracking-[0.4em] uppercase relative z-10"
-          style={{ color: "#C4A06A", opacity: 0.7 }}>
-          Projektgaranti AB · Ekerö
-        </span>
+      {/* Dark gradient overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(11,11,10,0.65) 0%, rgba(11,11,10,0.5) 40%, rgba(11,11,10,0.85) 100%)",
+        }}
+      />
 
-        <h1
-          className="relative z-10 text-[clamp(3.5rem,7.5vw,7.5rem)] font-black tracking-[-0.04em] leading-[0.92]"
-          style={{ color: "#F0EDE8" }}
+      {/* Gold glow from top */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 100% 50% at 50% -5%, rgba(196,160,106,0.1) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-9">
+
+        {/* Badge */}
+        <div
+          className="inline-flex items-center px-4 py-1.5 rounded-full border text-[10px] tracking-[0.32em] uppercase"
+          style={{
+            borderColor: "rgba(196,160,106,0.2)",
+            color: "rgba(240,237,232,0.32)",
+            background: "rgba(196,160,106,0.04)",
+          }}
         >
-          Trygghet i<br />varje projekt
-        </h1>
+          Projektgaranti AB · Certifierad sedan 1998
+        </div>
 
-        <p className="relative z-10 max-w-md text-base leading-relaxed"
-          style={{ color: "rgba(240,237,232,0.36)" }}>
-          Vi säkerställer att ditt byggprojekt levereras i tid,
-          inom budget och med garanterad kvalitet — varje gång.
+        {/* Heading */}
+        <div className="w-full flex flex-col items-center">
+          <h1
+            className="text-[clamp(3rem,7.5vw,7.5rem)] font-black tracking-[-0.04em] leading-[0.92] text-center"
+            style={{ color: "#F0EDE8" }}
+          >
+            Ditt byggprojekt —
+          </h1>
+
+          {/* Animated word */}
+          <div
+            className="relative overflow-hidden w-full"
+            style={{ height: "clamp(2.9rem,7.2vw,7.2rem)", marginTop: "0.08em" }}
+          >
+            <span
+              key={idx}
+              className="absolute inset-x-0 text-center font-black tracking-[-0.04em]"
+              style={{
+                fontSize: "clamp(3rem,7.5vw,7.5rem)",
+                lineHeight: 0.92,
+                color: "#C4A06A",
+                animation: "hero-word-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                willChange: "transform, opacity",
+              }}
+            >
+              {titles[idx]}
+            </span>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p
+          className="max-w-[42ch] text-base md:text-lg leading-relaxed"
+          style={{ color: "rgba(240,237,232,0.37)" }}
+        >
+          Vi säkerställer att ditt projekt levereras enligt avtal — med
+          25 år av bevisad erfarenhet i Stockholmsregionen.
         </p>
 
         {/* CTAs */}
-        <div className="relative z-10 flex flex-wrap items-center justify-center gap-3">
-          <div className="group relative p-px rounded-2xl overflow-hidden"
-            style={{ background: "linear-gradient(135deg, rgba(196,160,106,0.4), rgba(150,120,75,0.25))" }}>
-            <a
-              href="#kontakt"
-              className="flex items-center gap-2 h-11 px-6 rounded-[calc(1rem-1px)] text-sm font-semibold transition-colors duration-200"
-              style={{ background: "#0F0F0E", color: "rgba(240,237,232,0.8)" }}
-            >
-              Kom igång <ArrowRight size={13} />
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Button asChild size="lg" variant="outline">
+            <a href="#kontakt">
+              Kom igång <ArrowRight size={15} />
             </a>
-          </div>
-          <a
-            href="#om-oss"
-            className="flex items-center h-11 px-6 text-sm font-medium transition-colors duration-200"
-            style={{ color: "rgba(240,237,232,0.3)" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "rgba(240,237,232,0.55)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,237,232,0.3)")}
-          >
-            Läs mer
-          </a>
+          </Button>
+          <Button asChild size="lg" variant="secondary">
+            <a href="#om-oss">Om oss</a>
+          </Button>
         </div>
 
-        {/* Trust badges */}
-        <div className="relative z-10 flex flex-wrap justify-center gap-x-7 gap-y-2">
-          {badges.map((b) => (
-            <div key={b} className="flex items-center gap-1.5 text-[11px]"
-              style={{ color: "rgba(240,237,232,0.18)" }}>
-              <CheckCircle2 size={11} style={{ color: "rgba(240,237,232,0.25)" }} />
-              {b}
-            </div>
+        {/* Trust row */}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          {trust.map(t => (
+            <span
+              key={t}
+              className="flex items-center gap-1.5 text-[11px]"
+              style={{ color: "rgba(240,237,232,0.18)" }}
+            >
+              <CheckCircle2 size={11} style={{ color: "rgba(196,160,106,0.35)" }} />
+              {t}
+            </span>
           ))}
         </div>
-
-        {/* SVG path — draws as you scroll through the 220vh section */}
-        <HeroPath
-          className="absolute right-[-40%] top-0 z-0 pointer-events-none"
-          scrollYProgress={scrollYProgress}
-        />
       </div>
 
-      {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, #0F0F0E)" }} />
+      {/* Fade to next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-36 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent, #0F0F0E)" }}
+      />
     </section>
   )
 }

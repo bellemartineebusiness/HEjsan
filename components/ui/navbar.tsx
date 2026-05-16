@@ -30,23 +30,12 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div
-            className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 border"
-            style={{ background: "rgba(196,160,106,0.1)", borderColor: "rgba(196,160,106,0.25)" }}
-          >
-            <span className="text-[10px] font-black leading-none" style={{ color: "#C4A06A" }}>PG</span>
-          </div>
-          <div className="flex flex-col leading-none gap-0.5">
-            <span className="font-semibold text-[13px] tracking-wide transition-colors duration-200"
-              style={{ color: "rgba(240,237,232,0.8)" }}>
-              Projektgaranti
-            </span>
-            <span className="text-[9px] tracking-[0.25em] uppercase"
-              style={{ color: "rgba(240,237,232,0.22)" }}>
-              AB · Ekerö
-            </span>
-          </div>
+        <a href="#" className="flex items-center group">
+          <img
+            src="/lind.png"
+            alt="Projektgaranti AB"
+            className="h-15 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop links */}

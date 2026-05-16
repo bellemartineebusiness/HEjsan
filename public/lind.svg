@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" fill="none">
+  <!-- House icon -->
+  <!-- Baseline -->
+  <line x1="10" y1="178" x2="185" y2="178" stroke="#9E2A2A" stroke-width="5" stroke-linecap="round"/>
+  <!-- Outer house -->
+  <polyline points="18,178 18,110 95,42 172,110 172,178" stroke="#9E2A2A" stroke-width="6" stroke-linejoin="round" fill="none"/>
+  <!-- Middle house -->
+  <polyline points="38,178 38,118 95,62 152,118 152,178" stroke="#9E2A2A" stroke-width="5" stroke-linejoin="round" fill="none"/>
+  <!-- Inner house -->
+  <polyline points="58,178 58,126 95,82 132,126 132,178" stroke="#9E2A2A" stroke-width="4" stroke-linejoin="round" fill="none"/>
+  <!-- Door notch bottom left of inner -->
+  <polyline points="72,178 72,155 85,155 85,178" stroke="#9E2A2A" stroke-width="3.5" stroke-linejoin="round" fill="none"/>
+
+  <!-- Text -->
+  <text x="205" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="62" font-weight="600" fill="#F0EDE8" letter-spacing="-0.5">Projektgaranti</text>
+  <text x="205" y="170" font-family="system-ui, -apple-system, sans-serif" font-size="62" font-weight="600" fill="#F0EDE8" letter-spacing="-0.5">Stockholm AB</text>
+</svg>

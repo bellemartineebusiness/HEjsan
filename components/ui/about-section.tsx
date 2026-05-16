@@ -93,7 +93,7 @@ export function AboutSection() {
             <div className="rounded-2xl overflow-hidden border aspect-4/3"
               style={{ borderColor: "rgba(255,255,255,0.06)" }}>
               <img
-                src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+                src="https://images.unsplash.com/photo-1661760287397-4078833d3f53?w=800&q=80"
                 alt="Byggprojekt"
                 className="w-full h-full object-cover"
                 style={{ opacity: 0.5 }}
