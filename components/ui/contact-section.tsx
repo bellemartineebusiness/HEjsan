@@ -25,7 +25,7 @@ export function ContactSection() {
           <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: "#C4A06A" }}>
             Kontakt
           </p>
-          <h2 className="text-5xl md:text-6xl font-black tracking-[-0.03em] mb-5 leading-none"
+          <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] mb-5 leading-none"
             style={{ color: "#F0EDE8" }}>
             Redo att säkra
             <br />
@@ -40,11 +40,11 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Left — contact card */}
-          <div className="rounded-2xl border overflow-hidden"
+          <div className="rounded-2xl border overflow-hidden w-full"
             style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}>
 
             {/* Profile header */}
-            <div className="px-7 pt-8 pb-7 border-b" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+            <div className="px-5 pt-6 pb-5 md:px-7 md:pt-8 md:pb-7 border-b" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
               <div className="flex items-center gap-4 mb-5">
                 {/* Avatar */}
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center border shrink-0"
@@ -66,7 +66,7 @@ export function ContactSection() {
             </div>
 
             {/* Contact rows */}
-            <div className="px-7 py-6 space-y-5">
+            <div className="px-5 py-5 md:px-7 md:py-6 space-y-5">
               {[
                 { Icon: Phone, label: "Telefon", value: "+46 70 740 13 83", href: "tel:+46707401383" },
                 { Icon: Mail,  label: "E-post",  value: "info@projektgarantiab.se", href: "mailto:info@projektgarantiab.se" },
@@ -98,7 +98,7 @@ export function ContactSection() {
 
           {/* Right — form */}
           <form
-            className="rounded-2xl border p-7 space-y-4"
+            className="rounded-2xl border p-5 md:p-7 space-y-4"
             style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}
             onSubmit={(e) => e.preventDefault()}
           >
@@ -198,8 +198,8 @@ export function ContactSection() {
             © {new Date().getFullYear()} Projektgaranti AB
           </span>
         </div>
-        <p className="text-xs" style={{ color: "rgba(240,237,232,0.12)" }}>
-          Ekerövägen 51, 178 37 Ekerö · info@projektgarantiab.se
+        <p className="text-xs text-center md:text-left" style={{ color: "rgba(240,237,232,0.12)" }}>
+          Ekerövägen 51 · info@projektgarantiab.se
         </p>
       </div>
     </section>

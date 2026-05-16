@@ -21,7 +21,7 @@ export function AboutSection() {
               Om oss
             </p>
 
-            <h2 className="text-5xl md:text-6xl font-black tracking-[-0.03em] mb-7 leading-none"
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] mb-7 leading-none"
               style={{ color: "#F0EDE8" }}>
               25 år av bevisad
               <br />
@@ -89,7 +89,7 @@ export function AboutSection() {
           </div>
 
           {/* Right — image */}
-          <div className="relative">
+          <div className="relative mt-4 lg:mt-0">
             <div className="rounded-2xl overflow-hidden border aspect-4/3"
               style={{ borderColor: "rgba(255,255,255,0.06)" }}>
               <img
@@ -103,7 +103,7 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge — top right */}
-            <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
+            <div className="hidden sm:block absolute -top-3 -right-3 md:-top-4 md:-right-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
               style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
               <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
                 style={{ color: "rgba(240,237,232,0.25)" }}>Certifierad</div>
@@ -111,7 +111,7 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge — bottom left */}
-            <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
+            <div className="hidden sm:block absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border"
               style={{ background: "#0B0B0A", borderColor: "rgba(196,160,106,0.18)" }}>
               <div className="text-[9px] tracking-[0.25em] uppercase mb-1"
                 style={{ color: "rgba(240,237,232,0.25)" }}>Genomförda uppdrag</div>

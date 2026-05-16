@@ -72,7 +72,7 @@ export function ServicesSection() {
             Vad vi gör
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-5xl md:text-6xl font-black tracking-[-0.03em] leading-none"
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] leading-none"
               style={{ color: "#F0EDE8" }}>
               Våra tjänster
             </h2>

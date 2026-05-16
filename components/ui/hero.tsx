@@ -70,7 +70,7 @@ export function Hero() {
         {/* Heading */}
         <div className="w-full flex flex-col items-center">
           <h1
-            className="text-[clamp(3rem,7.5vw,7.5rem)] font-black tracking-[-0.04em] leading-[0.92] text-center"
+            className="text-[clamp(2rem,7.5vw,7.5rem)] font-black tracking-[-0.04em] leading-[0.92] text-center"
             style={{ color: "#F0EDE8" }}
           >
             Ditt byggprojekt —
@@ -79,13 +79,13 @@ export function Hero() {
           {/* Animated word */}
           <div
             className="relative overflow-hidden w-full"
-            style={{ height: "clamp(2.9rem,7.2vw,7.2rem)", marginTop: "0.08em" }}
+            style={{ height: "clamp(1.95rem,7.2vw,7.2rem)", marginTop: "0.08em" }}
           >
             <span
               key={idx}
               className="absolute inset-x-0 text-center font-black tracking-[-0.04em]"
               style={{
-                fontSize: "clamp(3rem,7.5vw,7.5rem)",
+                fontSize: "clamp(2rem,7.5vw,7.5rem)",
                 lineHeight: 0.92,
                 color: "#C4A06A",
                 animation: "hero-word-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards",
