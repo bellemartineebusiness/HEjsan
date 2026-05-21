@@ -32,7 +32,7 @@ const services = [
     icon: BarChart2,
     accent: GOLD,
     title: "Riskanalys",
-    description: "Vi identifierar och hanterar risker innan de blir problem, vilket sparar tid, pengar och onödig stress.",
+    description: "Vi identifierar och hanterar risker innan de blir problem, vilket sparar tid och pengar.",
     tag: "Analys",
   },
   {
