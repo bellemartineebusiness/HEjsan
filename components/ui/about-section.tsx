@@ -6,7 +6,7 @@ const values = [
   "Helt oberoende från entreprenörer och leverantörer",
   "ISO 9001-certifierade projektledare och besiktningsmän",
   "Lokal expertis i Stockholms- och Mälarregionen sedan 1998",
-  "Proaktiv rapportering — du är alltid informerad",
+  "Proaktiv rapportering, du är alltid informerad",
 ]
 
 export function AboutSection() {
@@ -31,7 +31,7 @@ export function AboutSection() {
             <p className="text-base leading-relaxed mb-4"
               style={{ color: "rgba(240,237,232,0.45)" }}>
               Sedan 1998 har vi hjälpt beställare och fastighetsägare att ta tillbaka
-              kontrollen i byggprocessen — utan att kompromissa med kvalitet eller budget.
+              kontrollen i byggprocessen, utan att kompromissa med kvalitet eller budget.
             </p>
             <p className="text-sm leading-relaxed mb-7 md:mb-10"
               style={{ color: "rgba(240,237,232,0.3)" }}>

@@ -73,7 +73,7 @@ export function Hero() {
             className="text-[clamp(2rem,7.5vw,7.5rem)] font-black tracking-[-0.04em] leading-[0.92] text-center"
             style={{ color: "#F0EDE8" }}
           >
-            Ditt byggprojekt —
+            Ditt byggprojekt
           </h1>
 
           {/* Animated word */}
@@ -103,7 +103,7 @@ export function Hero() {
           style={{ color: "rgba(240,237,232,0.37)" }}
         >
           Oberoende byggkontroll och projektledning som säkrar ditt
-          projekt — från upphandling till slutbesiktning.
+          projekt, från upphandling till slutbesiktning.
         </p>
 
         {/* CTAs */}

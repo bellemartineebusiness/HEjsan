@@ -18,7 +18,7 @@ const services = [
     icon: ShieldCheck,
     accent: GOLD,
     title: "Projektgaranti",
-    description: "Vi åtar oss fullt ansvar för att ditt projekt levereras enligt avtal — tid, budget och kvalitet utan undantag.",
+    description: "Vi åtar oss fullt ansvar för att ditt projekt levereras enligt avtal: tid, budget och kvalitet utan undantag.",
     tag: "Kärntjänst",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     icon: BarChart2,
     accent: GOLD,
     title: "Riskanalys",
-    description: "Vi identifierar och hanterar risker innan de blir problem — vilket sparar tid, pengar och onödig stress.",
+    description: "Vi identifierar och hanterar risker innan de blir problem, vilket sparar tid, pengar och onödig stress.",
     tag: "Analys",
   },
   {
@@ -53,7 +53,7 @@ const services = [
     icon: BookOpen,
     accent: SLATE,
     title: "Beställarstöd",
-    description: "Strategisk rådgivning kring upphandling, kalkyl och avtal — för beställare som vill fatta välgrundade beslut.",
+    description: "Strategisk rådgivning kring upphandling, kalkyl och avtal för beställare som vill fatta välgrundade beslut.",
     tag: "Strategi",
   },
 ]
@@ -78,7 +78,7 @@ export function ServicesSection() {
             </h2>
             <p className="text-sm leading-relaxed max-w-xs"
               style={{ color: "rgba(240,237,232,0.35)" }}>
-              Sex tjänster — ett mål: att ditt projekt går i mål som planerat.
+              Sex tjänster med ett mål: att ditt projekt går i mål som planerat.
             </p>
           </div>
         </div>

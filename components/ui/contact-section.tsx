@@ -33,7 +33,7 @@ export function ContactSection() {
           </h2>
           <p className="text-base max-w-sm mx-auto leading-relaxed"
             style={{ color: "rgba(240,237,232,0.35)" }}>
-            Hör av dig — vi svarar inom en arbetsdag och ger dig en ärlig bild av hur vi kan hjälpa.
+            Hör av dig, vi svarar inom en arbetsdag och ger dig en ärlig bild av hur vi kan hjälpa.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export function ContactSection() {
                 style={{ color: "rgba(240,237,232,0.3)" }}>Berätta om ditt projekt</label>
               <textarea
                 rows={4}
-                placeholder="Berätta kort om projektet — typ, storlek, tidplan och eventuella utmaningar..."
+                placeholder="Berätta kort om projektet: typ, storlek, tidplan och eventuella utmaningar..."
                 className="w-full rounded-xl px-4 py-3 text-sm placeholder-white/18 outline-none border transition-colors duration-200 resize-none"
                 style={inputStyle}
               />
