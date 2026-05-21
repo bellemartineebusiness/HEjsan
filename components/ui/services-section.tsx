@@ -18,42 +18,42 @@ const services = [
     icon: ShieldCheck,
     accent: GOLD,
     title: "Projektgaranti",
-    description: "Vi tar fullt ansvar för hela projektcykeln och garanterar att slutresultatet möter avtalade krav på funktion, tidplan och ekonomi.",
+    description: "Vi åtar oss fullt ansvar för att ditt projekt levereras enligt avtal — tid, budget och kvalitet utan undantag.",
     tag: "Kärntjänst",
   },
   {
     icon: ClipboardList,
     accent: SLATE,
     title: "Byggkontroll",
-    description: "Oberoende kontroll och besiktning under byggskedet säkerställer att arbetet utförs fackmässigt och enligt gällande normer.",
+    description: "Löpande oberoende kontroll på byggarbetsplatsen säkerställer fackmässigt utförande och regelefterlevnad i varje skede.",
     tag: "Kvalitet",
   },
   {
     icon: BarChart2,
     accent: GOLD,
     title: "Riskanalys",
-    description: "Proaktiv identifiering av risker tidigt i projektet minimerar kostsamma överraskningar och förseningar i byggprocessen.",
+    description: "Vi identifierar och hanterar risker innan de blir problem — vilket sparar tid, pengar och onödig stress.",
     tag: "Analys",
   },
   {
     icon: FileCheck2,
     accent: SLATE,
     title: "Garantihantering",
-    description: "Vi administrerar garantiärenden mot leverantörer och entreprenörer under hela garantitiden efter färdigställande.",
+    description: "Fullständig administration av garantiärenden mot entreprenörer och leverantörer under hela garantiperioden.",
     tag: "Förvaltning",
   },
   {
     icon: Scale,
     accent: GOLD,
     title: "Tvistlösning",
-    description: "Expertstöd vid tekniska tvister och reklamationer ger dig ett starkt underlag för en rättvis och effektiv lösning.",
+    description: "Teknisk expertis och dokumentation som ger dig ett övertygande underlag vid reklamationer och byggtvister.",
     tag: "Juridik",
   },
   {
     icon: BookOpen,
     accent: SLATE,
-    title: "Rådgivning",
-    description: "Strategisk rådgivning till beställare, förvaltare och investerare kring tekniska krav, kalkyl och upphandlingsformer.",
+    title: "Beställarstöd",
+    description: "Strategisk rådgivning kring upphandling, kalkyl och avtal — för beställare som vill fatta välgrundade beslut.",
     tag: "Strategi",
   },
 ]
@@ -78,7 +78,7 @@ export function ServicesSection() {
             </h2>
             <p className="text-sm leading-relaxed max-w-xs"
               style={{ color: "rgba(240,237,232,0.35)" }}>
-              Specialister på byggprojekt med över 25 års erfarenhet i Stockholmsregionen.
+              Sex tjänster — ett mål: att ditt projekt går i mål som planerat.
             </p>
           </div>
         </div>

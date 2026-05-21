@@ -3,10 +3,10 @@
 import { CheckCircle2, MapPin, ArrowRight } from "lucide-react"
 
 const values = [
-  "Oberoende från alla leverantörer och entreprenörer",
-  "Certifierade besiktningsmän och projektledare",
-  "Djup kännedom om Stockholms byggmarknad",
-  "Proaktiv kommunikation genom hela projektet",
+  "Helt oberoende från entreprenörer och leverantörer",
+  "ISO 9001-certifierade projektledare och besiktningsmän",
+  "Lokal expertis i Stockholms- och Mälarregionen sedan 1998",
+  "Proaktiv rapportering — du är alltid informerad",
 ]
 
 export function AboutSection() {
@@ -23,21 +23,20 @@ export function AboutSection() {
 
             <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] mb-7 leading-none"
               style={{ color: "#F0EDE8" }}>
-              25 år av bevisad
+              Din garanti för ett
               <br />
-              <span style={{ color: "#C4A06A" }}>excellens</span>
+              <span style={{ color: "#C4A06A" }}>tryggt projekt</span>
             </h2>
 
             <p className="text-base leading-relaxed mb-4"
               style={{ color: "rgba(240,237,232,0.45)" }}>
-              Projektgaranti AB grundades 1998 med ett tydligt uppdrag — att ge beställare och
-              fastighetsägare fullständig kontroll och trygghet i byggprocessen.
+              Sedan 1998 har vi hjälpt beställare och fastighetsägare att ta tillbaka
+              kontrollen i byggprocessen — utan att kompromissa med kvalitet eller budget.
             </p>
             <p className="text-sm leading-relaxed mb-7 md:mb-10"
               style={{ color: "rgba(240,237,232,0.3)" }}>
-              Vi arbetar alltid oberoende från entreprenörer och leverantörer, vilket ger oss
-              möjlighet att uteslutande representera beställarens intressen — oavsett projektets
-              storlek eller komplexitet.
+              Som oberoende part representerar vi uteslutande dina intressen. Det betyder
+              skarpare upphandlingar, färre tvister och ett slutresultat du faktiskt är nöjd med.
             </p>
 
             <ul className="space-y-3.5 mb-7 md:mb-10">

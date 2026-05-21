@@ -9,7 +9,7 @@ const titles = ["garanterat", "i tid", "i budget", "certifierat", "tryggt"]
 const trust = [
   "ISO 9001-certifierad",
   "400+ genomförda projekt",
-  "Stockholm sedan 1998",
+  "Ekerö sedan 1998",
 ]
 
 export function Hero() {
@@ -64,7 +64,7 @@ export function Hero() {
             background: "rgba(196,160,106,0.04)",
           }}
         >
-          Projektgaranti AB · Certifierad sedan 1998
+          Projektgaranti AB · Oberoende sedan 1998
         </div>
 
         {/* Heading */}
@@ -102,8 +102,8 @@ export function Hero() {
           className="max-w-[42ch] text-base md:text-lg leading-relaxed"
           style={{ color: "rgba(240,237,232,0.37)" }}
         >
-          Vi säkerställer att ditt projekt levereras enligt avtal — med
-          25 år av bevisad erfarenhet i Stockholmsregionen.
+          Oberoende byggkontroll och projektledning som säkrar ditt
+          projekt — från upphandling till slutbesiktning.
         </p>
 
         {/* CTAs */}

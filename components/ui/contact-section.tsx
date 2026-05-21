@@ -27,13 +27,13 @@ export function ContactSection() {
           </p>
           <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] mb-5 leading-none"
             style={{ color: "#F0EDE8" }}>
-            Redo att säkra
+            Låt oss ta hand
             <br />
-            <span style={{ color: "#C4A06A" }}>ditt projekt?</span>
+            <span style={{ color: "#C4A06A" }}>om ditt projekt</span>
           </h2>
           <p className="text-base max-w-sm mx-auto leading-relaxed"
             style={{ color: "rgba(240,237,232,0.35)" }}>
-            Kontakta oss för ett förutsättningslöst samtal om hur vi kan trygga ditt nästa byggprojekt.
+            Hör av dig — vi svarar inom en arbetsdag och ger dig en ärlig bild av hur vi kan hjälpa.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export function ContactSection() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.35)" }}>
-                Din direktkontakt för projektfrågor och offertförfrågningar. Hör av dig — vi svarar vanligtvis inom en arbetsdag.
+                Ansvarig för alla kundrelationer och projektuppdrag. Ställ frågor, boka möte eller skicka in en förfrågan direkt.
               </p>
             </div>
 
@@ -141,7 +141,7 @@ export function ContactSection() {
                 style={{ color: "rgba(240,237,232,0.3)" }}>Berätta om ditt projekt</label>
               <textarea
                 rows={4}
-                placeholder="Kortfattad beskrivning av projektet, budget och tidplan..."
+                placeholder="Berätta kort om projektet — typ, storlek, tidplan och eventuella utmaningar..."
                 className="w-full rounded-xl px-4 py-3 text-sm placeholder-white/18 outline-none border transition-colors duration-200 resize-none"
                 style={inputStyle}
               />

@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react"
 
 const stats = [
-  { value: 25,  suffix: "+",    label: "Års erfarenhet",     sub: "I Stockholmsregionen",        primary: true  },
-  { value: 400, suffix: "+",    label: "Genomförda projekt",  sub: "Från renovering till nybyggnad", primary: false },
-  { value: 98,  suffix: "%",    label: "Kundnöjdhet",         sub: "Verifierat av kunder",           primary: true  },
-  { value: 12,  suffix: " Mdr", label: "Garanterat värde",    sub: "I totalt projektvärde",          primary: false },
+  { value: 25,  suffix: "+",    label: "Års erfarenhet",      sub: "Ekerö & Stockholmsregionen",     primary: true  },
+  { value: 400, suffix: "+",    label: "Genomförda projekt",   sub: "Renovering, nybyggnad, förvaltning", primary: false },
+  { value: 98,  suffix: "%",    label: "Nöjda beställare",     sub: "Uppföljt projekt för projekt",   primary: true  },
+  { value: 12,  suffix: " Mdr", label: "Säkrat projektvärde",  sub: "Totalt kontrollerat kapital",    primary: false },
 ]
 
 function CountUp({ target, suffix, primary }: { target: number; suffix: string; primary: boolean }) {
