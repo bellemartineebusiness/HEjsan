@@ -34,7 +34,7 @@ const services = [
     icon: BarChart2,
     accent: GOLD,
     title: "Riskanalys",
-    description: "Hellre förebygga än åtgärda. Vi hittar potentiella problem tidigt så att de aldrig hinner bli dyra eller stressiga.",
+    description: "Hellre förebygga än åtgärda. Vi hittar potentiella problem tidigt så att de aldrig hinner bli dyra eller krångliga att lösa.",
     tag: "Analys",
   },
   {
