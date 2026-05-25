@@ -44,6 +44,12 @@ body {
   to   { opacity: 1; transform: translateY(0);    }
 }
 
+/* Hero gold glow breathe */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
 /* Thin scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }

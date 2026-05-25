@@ -1,12 +1,14 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const stats = [
-  { value: 25,  suffix: "+",    label: "Års erfarenhet",      sub: "Ekerö & Stockholmsregionen",     primary: true  },
-  { value: 400, suffix: "+",    label: "Genomförda projekt",   sub: "Renovering, nybyggnad, förvaltning", primary: false },
-  { value: 98,  suffix: "%",    label: "Nöjda beställare",     sub: "Uppföljt projekt för projekt",   primary: true  },
-  { value: 12,  suffix: " Mdr", label: "Säkrat projektvärde",  sub: "Totalt kontrollerat kapital",    primary: false },
+  { value: 25,  suffix: "+",    label: "År i branschen",       sub: "Vi vet vad vi pratar om",            primary: true  },
+  { value: 400, suffix: "+",    label: "Glada kunder",         sub: "Från små renoveringar till nybyggen", primary: false },
+  { value: 98,  suffix: "%",    label: "Skulle anlita oss igen", sub: "Det säger vi med stolthet",        primary: true  },
+  { value: 12,  suffix: " Mdr", label: "Hanterat projektvärde", sub: "Stora och små, vi tar hand om alla", primary: false },
 ]
 
 function CountUp({ target, suffix, primary }: { target: number; suffix: string; primary: boolean }) {
@@ -43,20 +45,34 @@ function CountUp({ target, suffix, primary }: { target: number; suffix: string; 
 }
 
 export function StatsSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const ctx = gsap.context(() => {
+      gsap.from(".stat-item", {
+        autoAlpha: 0,
+        y: 24,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".stat-item", start: "top 88%" },
+      })
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="relative py-24 px-6" style={{ background: "#0B0B0A" }}>
+    <section ref={sectionRef} className="relative py-24 px-6" style={{ background: "#0B0B0A" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={s.label}
               className={[
-                "flex flex-col items-center text-center py-10 px-3 md:px-6",
-                // mobile 2-col: right border on left column only
+                "stat-item flex flex-col items-center text-center py-10 px-3 md:px-6",
                 i % 2 === 0 ? "border-r" : "",
-                // mobile 2-col: bottom border on first row only
                 i < 2 ? "border-b" : "",
-                // desktop 4-col: restore right borders except last, remove bottom
                 i < stats.length - 1 ? "lg:border-r" : "lg:border-r-0",
                 "lg:border-b-0",
               ].filter(Boolean).join(" ")}

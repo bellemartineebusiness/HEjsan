@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/ui/lenis-provider";
+import { GSAPInit } from "@/components/ui/gsap-init";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="sv" className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full bg-black text-white">
-          <LenisProvider>{children}</LenisProvider>
+          <LenisProvider>
+            <GSAPInit />
+            {children}
+          </LenisProvider>
         </body>
     </html>
   );

@@ -1,5 +1,8 @@
 "use client"
 
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Mail, Phone, ArrowRight, MapPin } from "lucide-react"
 
 const inputStyle = {
@@ -9,9 +12,25 @@ const inputStyle = {
 }
 
 export function ContactSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const ctx = gsap.context(() => {
+      gsap.from(".contact-header", {
+        autoAlpha: 0, y: 24, duration: 0.8, ease: "power3.out",
+        scrollTrigger: { trigger: ".contact-header", start: "top 88%" },
+      })
+      gsap.from(".contact-card", {
+        autoAlpha: 0, y: 36, scale: 0.98, duration: 0.8, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: ".contact-card", start: "top 88%" },
+      })
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <section id="kontakt" className="relative py-24 md:py-36 px-6" style={{ background: "#0B0B0A" }}>
+    <section ref={sectionRef} id="kontakt" className="relative py-24 md:py-36 px-6" style={{ background: "#0B0B0A" }}>
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 50% 50% at 30% 60%, rgba(74,114,200,0.04) 0%, transparent 70%)" }} />
 
@@ -21,26 +40,26 @@ export function ContactSection() {
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-12 md:mb-24">
+        <div className="contact-header text-center mb-12 md:mb-24">
           <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: "#C4A06A" }}>
             Kontakt
           </p>
           <h2 className="text-4xl md:text-6xl font-black tracking-[-0.03em] mb-5 leading-none"
             style={{ color: "#F0EDE8" }}>
-            Låt oss ta hand
+            Låt oss ses och
             <br />
-            <span style={{ color: "#C4A06A" }}>om ditt projekt</span>
+            <span style={{ color: "#C4A06A" }}>ta en kaffe</span>
           </h2>
           <p className="text-base max-w-sm mx-auto leading-relaxed"
             style={{ color: "rgba(240,237,232,0.35)" }}>
-            Hör av dig, vi svarar inom en arbetsdag och ger dig en ärlig bild av hur vi kan hjälpa.
+            Hör av dig, det kostar ingenting att prata. Vi berättar gärna hur vi kan hjälpa just dig.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           {/* Left — contact card */}
-          <div className="rounded-2xl border overflow-hidden w-full"
+          <div className="contact-card rounded-2xl border overflow-hidden w-full"
             style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}>
 
             {/* Profile header */}
@@ -61,7 +80,7 @@ export function ContactSection() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.35)" }}>
-                Ansvarig för alla kundrelationer och projektuppdrag. Ställ frågor, boka möte eller skicka in en förfrågan direkt.
+                Joacim tar personligen hand om alla nya kontakter. Tveka inte att höra av dig, han svarar snabbt och ärligt.
               </p>
             </div>
 
@@ -98,7 +117,7 @@ export function ContactSection() {
 
           {/* Right — form */}
           <form
-            className="rounded-2xl border p-5 md:p-7 space-y-4"
+            className="contact-card rounded-2xl border p-5 md:p-7 space-y-4"
             style={{ background: "rgba(255,255,255,0.018)", borderColor: "rgba(255,255,255,0.06)" }}
             onSubmit={(e) => e.preventDefault()}
           >
@@ -141,7 +160,7 @@ export function ContactSection() {
                 style={{ color: "rgba(240,237,232,0.3)" }}>Berätta om ditt projekt</label>
               <textarea
                 rows={4}
-                placeholder="Berätta kort om projektet: typ, storlek, tidplan och eventuella utmaningar..."
+                placeholder="Berätta lite om ditt projekt, vad det gäller och vad du funderar på..."
                 className="w-full rounded-xl px-4 py-3 text-sm placeholder-white/18 outline-none border transition-colors duration-200 resize-none"
                 style={inputStyle}
               />
@@ -154,7 +173,7 @@ export function ContactSection() {
                 className="w-full h-12 rounded-[calc(0.75rem-1px)] flex items-center justify-center gap-2 text-sm font-semibold transition-colors duration-200"
                 style={{ background: "#0F0F0E", color: "rgba(240,237,232,0.85)" }}
               >
-                Skicka förfrågan <ArrowRight size={14} />
+                Skicka meddelande <ArrowRight size={14} />
               </button>
             </div>
           </form>

@@ -1,5 +1,8 @@
 "use client"
 
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   ShieldCheck,
   ClipboardList,
@@ -9,7 +12,6 @@ import {
   BookOpen,
 } from "lucide-react"
 
-// Two accent colors only — gold (primary) and slate (secondary)
 const GOLD  = "#C4A06A"
 const SLATE = "#8A9BB0"
 
@@ -18,56 +20,85 @@ const services = [
     icon: ShieldCheck,
     accent: GOLD,
     title: "Projektgaranti",
-    description: "Vi åtar oss fullt ansvar för att ditt projekt levereras enligt avtal: tid, budget och kvalitet utan undantag.",
+    description: "Du ska kunna lita på att projektet går i mål som planerat. Vi ser till att så sker, och tar ansvar om något inte stämmer.",
     tag: "Kärntjänst",
   },
   {
     icon: ClipboardList,
     accent: SLATE,
     title: "Byggkontroll",
-    description: "Löpande oberoende kontroll på byggarbetsplatsen säkerställer fackmässigt utförande och regelefterlevnad i varje skede.",
+    description: "Vi håller ett vaksamt öga på byggarbetsplatsen så att du slipper oroa dig. Jobbet utförs som det ska, varje gång.",
     tag: "Kvalitet",
   },
   {
     icon: BarChart2,
     accent: GOLD,
     title: "Riskanalys",
-    description: "Vi identifierar och hanterar risker innan de blir problem, vilket sparar tid och pengar.",
+    description: "Hellre förebygga än åtgärda. Vi hittar potentiella problem tidigt så att de aldrig hinner bli dyra eller stressiga.",
     tag: "Analys",
   },
   {
     icon: FileCheck2,
     accent: SLATE,
     title: "Garantihantering",
-    description: "Fullständig administration av garantiärenden mot entreprenörer och leverantörer under hela garantiperioden.",
+    description: "När bygget är klart är vi fortfarande kvar. Vi hanterar garantiärenden åt dig så att du slipper krånglet.",
     tag: "Förvaltning",
   },
   {
     icon: Scale,
     accent: GOLD,
     title: "Tvistlösning",
-    description: "Teknisk expertis och dokumentation som ger dig ett övertygande underlag vid reklamationer och byggtvister.",
+    description: "Om något ändå går snett vet vi precis hur man reder ut det. Du får stöd och rätt dokumentation hela vägen.",
     tag: "Juridik",
   },
   {
     icon: BookOpen,
     accent: SLATE,
     title: "Beställarstöd",
-    description: "Strategisk rådgivning kring upphandling, kalkyl och avtal för beställare som vill fatta välgrundade beslut.",
-    tag: "Strategi",
+    description: "Osäker på hur du ska tänka kring upphandling eller avtal? Vi sitter ner med dig och går igenom det tillsammans.",
+    tag: "Råd",
   },
 ]
 
 export function ServicesSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const ctx = gsap.context(() => {
+
+      // Header slides up
+      gsap.from(".services-header", {
+        autoAlpha: 0,
+        y: 32,
+        duration: 0.9,
+        scrollTrigger: { trigger: ".services-header", start: "top 88%" },
+      })
+
+      // Cards: stagger with subtle scale
+      gsap.from(".service-card", {
+        autoAlpha: 0,
+        y: 40,
+        scale: 0.97,
+        duration: 0.75,
+        stagger: 0.07,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".service-card", start: "top 88%" },
+      })
+
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section id="tjänster" className="relative py-24 md:py-36 px-6" style={{ background: "#0F0F0E" }}>
+    <section ref={sectionRef} id="tjänster" className="relative py-24 md:py-36 px-6" style={{ background: "#0F0F0E" }}>
       <div className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent)" }} />
 
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="mb-12 md:mb-20">
+        <div className="services-header mb-12 md:mb-20">
           <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ color: "#C4A06A" }}>
             Vad vi gör
           </p>
@@ -78,7 +109,7 @@ export function ServicesSection() {
             </h2>
             <p className="text-sm leading-relaxed max-w-xs"
               style={{ color: "rgba(240,237,232,0.35)" }}>
-              Sex tjänster med ett mål: att ditt projekt går i mål som planerat.
+              Allt du behöver, samlat hos ett team som faktiskt bryr sig.
             </p>
           </div>
         </div>
@@ -91,7 +122,7 @@ export function ServicesSection() {
             return (
               <div
                 key={s.title}
-                className="p-6 md:p-8 flex flex-col"
+                className="service-card p-6 md:p-8 flex flex-col"
                 style={{ background: "#0F0F0E" }}
               >
                 <div className="flex items-center justify-between mb-8">
