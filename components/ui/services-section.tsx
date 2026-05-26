@@ -20,7 +20,7 @@ const services = [
     icon: ShieldCheck,
     accent: GOLD,
     title: "Projektgaranti",
-    description: "Du ska kunna lita på att projektet går i mål som planerat. Vi ser till att så sker, och tar ansvar om något inte stämmer.",
+    description: "Ditt projekt ska gå i mål i tid och inom budget. Det är vår uppgift, och vi tar den på största allvar.",
     tag: "Kärntjänst",
   },
   {

@@ -81,8 +81,8 @@ export function AboutSection() {
             </p>
             <p className="text-sm leading-relaxed mb-7 md:mb-10"
               style={{ color: "rgba(240,237,232,0.3)" }}>
-              Vi är ett litet, engagerat team som inte tar på oss fler uppdrag än vi kan göra riktigt bra.
-              Varje kund får vår fulla uppmärksamhet, från första mötet till sista besiktningen.
+              Hos oss är du aldrig bara ett nummer. Du pratar med samma person genom hela projektet
+              och vet alltid vad som händer och varför.
             </p>
 
             <ul className="space-y-3.5 mb-7 md:mb-10">

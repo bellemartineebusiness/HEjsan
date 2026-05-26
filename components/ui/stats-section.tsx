@@ -5,10 +5,10 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const stats = [
-  { value: 25,  suffix: "+",    label: "År i branschen",       sub: "Vi vet vad vi pratar om",            primary: true  },
+  { value: 25,  suffix: "+",    label: "År i branschen",       sub: "Ekerö och Stockholmsregionen",            primary: true  },
   { value: 400, suffix: "+",    label: "Glada kunder",         sub: "Från små renoveringar till nybyggen", primary: false },
   { value: 98,  suffix: "%",    label: "Skulle anlita oss igen", sub: "Det säger vi med stolthet",        primary: true  },
-  { value: 12,  suffix: " Mdr", label: "Hanterat projektvärde", sub: "Stora och små, vi tar hand om alla", primary: false },
+  { value: 12,  suffix: " Mdr", label: "Hanterat projektvärde", sub: "I totalt projektvärde", primary: false },
 ]
 
 function CountUp({ target, suffix, primary }: { target: number; suffix: string; primary: boolean }) {

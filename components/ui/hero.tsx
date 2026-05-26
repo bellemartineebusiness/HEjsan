@@ -163,8 +163,8 @@ export function Hero() {
           className="hero-item max-w-[42ch] text-base md:text-lg leading-relaxed"
           style={{ color: "rgba(240,237,232,0.37)" }}
         >
-          Vi hjälper dig att bygga rätt från start. Med oss vid din
-          sida slipper du obehagliga överraskningar längs vägen.
+          Över 400 nöjda kunder kan inte ha fel. Vi tar hand om ditt
+          byggprojekt så att du kan fokusera på det som är viktigt för dig.
         </p>
 
         {/* CTAs */}
